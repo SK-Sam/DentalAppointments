@@ -1,0 +1,2 @@
+class DentalOfficesController < ApplicationController
+end
