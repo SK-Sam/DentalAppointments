@@ -12,7 +12,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
+[dbdesigner link](https://app.dbdesigner.net/designer/schema/382083)
 * Database initialization
 
 * How to run the test suite
