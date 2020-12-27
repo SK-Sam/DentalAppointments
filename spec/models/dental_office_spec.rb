@@ -21,18 +21,18 @@ RSpec.describe DentalOffice, type: :model do
         office1 = create(:dental_office, name: 'a')
         office2 = create(:dental_office, name: 'b')
         office3 = create(:dental_office, name: 'c')
-        ordered_offices = DentalOffice.order_by_attr_asc("name")
+        ordered_offices = DentalOffice.order_by_attr("name")
 
         expect(ordered_offices[0]).to eq(office1)
         expect(ordered_offices[1]).to eq(office2)
         expect(ordered_offices[2]).to eq(office3)
 
-        ordered_offices = DentalOffice.order_by_attr_asc("name", "DESC")
+        ordered_offices = DentalOffice.order_by_attr("name", "DESC")
         expect(ordered_offices[0]).to eq(office3)
         expect(ordered_offices[1]).to eq(office2)
         expect(ordered_offices[2]).to eq(office1)
 
-        ordered_offices = DentalOffice.order_by_attr_asc("id")
+        ordered_offices = DentalOffice.order_by_attr("id")
 
         expect(ordered_offices[0]).to eq(office1)
         expect(ordered_offices[1]).to eq(office2)
