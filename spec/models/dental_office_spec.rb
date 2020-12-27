@@ -31,6 +31,12 @@ RSpec.describe DentalOffice, type: :model do
         expect(ordered_offices[0]).to eq(office3)
         expect(ordered_offices[1]).to eq(office2)
         expect(ordered_offices[2]).to eq(office1)
+
+        ordered_offices = DentalOffice.order_by_attr_asc("id")
+
+        expect(ordered_offices[0]).to eq(office1)
+        expect(ordered_offices[1]).to eq(office2)
+        expect(ordered_offices[2]).to eq(office3)
       end
     end
   end
