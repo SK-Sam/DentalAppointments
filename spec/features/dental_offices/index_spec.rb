@@ -12,6 +12,14 @@ RSpec.describe 'Dental Offices Index Page' do
       expect(page).to have_content(@office1.name)
       expect(page).to have_content(@office2.name)
       expect(page).to have_content(@office3.name)
+      expect(page).to have_content("Add Dental Office")
+    end
+  end
+  describe 'Pathing' do
+    it 'can direct to New Dental Office page' do
+      click_on "Add Dental Office"
+
+      expect(current_path).to eq("/dental_offices/new")
     end
   end
 end
