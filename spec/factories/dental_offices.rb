@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :dental_office do
-    name { "MyString" }
-    street_address { "MyString" }
-    city { "MyString" }
-    state { "MyString" }
-    zip_code { "MyString" }
-    insurance_type { "MyString" }
+    name { Faker::Company.name }
+    street_address { Faker::Address.street_address }
+    city { Faker::Address.city }
+    state { Faker::Address.state_abbr }
+    zip_code { Faker::Number.leading_zero_number(digits: 5) }
+    insurance_type { ["HMO", "PPO"].sample }
   end
 end

@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :patient do
-    name { "MyString" }
-    insurance_type { "MyString" }
-    sex { 1 }
-    preexisting_conditions { false }
+    name { Faker::Superhero.name }
+    insurance_type { ["HMO", "PPO"].sample }
+    sex { [:male, :female].sample }
+    preexisting_conditions { Faker::Boolean.boolean(true_ratio: 0.4) }
   end
 end
