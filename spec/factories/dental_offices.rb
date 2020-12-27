@@ -5,6 +5,6 @@ FactoryBot.define do
     city { Faker::Address.city }
     state { Faker::Address.state_abbr }
     zip_code { Faker::Number.leading_zero_number(digits: 5) }
-    insurance_type { ["HMO", "PPO"].sample }
+    insurance_type { ["HMO", "PPO", "HMO + PPO"].sample }
   end
 end
