@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'Dental Offices Index Page' do
+RSpec.describe 'Dental Offices Show Page' do
   before :each do
     @office1 = create(:dental_office)
     @dentist1 = create(:dentist, dental_office: @office1)
     @dentist2 = create(:dentist, dental_office: @office1)
     @dentist3 = create(:dentist, dental_office: @office1)
-    "visit /dental_offices/#{@office1.id}"
+    visit "/dental_offices/#{@office1.id}"
   end
-  describe 'Show Page' do
+  describe 'Content' do
     it 'can display all attributes of the dental office along with all dentists who work there' do
       expect(page).to have_content(@office1.name)
       expect(page).to have_content(@office1.street_address)
