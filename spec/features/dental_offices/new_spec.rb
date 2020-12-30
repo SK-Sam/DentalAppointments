@@ -31,5 +31,20 @@ RSpec.describe 'New Page' do
       expect(page).to have_content(zip_code)
       expect(page).to have_content(insurance_type)   
     end
+    it 'can display errors user made when improperly submitting a form' do
+      name = Faker::Company.name
+
+      fill_in 'name', with: name
+
+      click_on 'Add Dental Office to List'
+      
+      within("section.flash") do
+        expect(page).to have_content("Street address can't be blank")
+        expect(page).to have_content("City can't be blank")
+        expect(page).to have_content("State can't be blank")
+        expect(page).to have_content("Zip code can't be blank")
+        expect(page).to have_content("Insurance type can't be blank")
+      end
+    end
   end
 end
