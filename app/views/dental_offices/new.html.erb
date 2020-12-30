@@ -1,11 +1,13 @@
 <h1>New Dental Office</h1>
-
-<% flash.each do |type, msg| %>
-  <section class="error">
+<section class="flash">
+<% flash.each do |type, msgs| %>
+  <% msgs.each do |msg| %>
     <ul><%= msg %></ul>
-  </section>
+  <% end %>
 <% end %>
+</section>
 
 <%= render partial: 'dental_office_form', locals: {
-  path: '/dental_offices', method: :post, button_text: 'Add Dental Office to List'
+  path: '/dental_offices', method: :post, button_text: 'Add Dental Office to List',
+  model: @dental_office
 } %>
