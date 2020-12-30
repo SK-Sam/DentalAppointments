@@ -1,6 +1,6 @@
 <section class="feedback_flash">
   <% flash.each do |type, msg| %>
-    <p><%= msg %></p>
+    <p><%= msg unless msg != "Successfully added new Dental Office" %></p>
   <% end %>
 </section>
 

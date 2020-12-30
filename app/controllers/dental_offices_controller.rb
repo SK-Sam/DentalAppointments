@@ -26,8 +26,8 @@ class DentalOfficesController < ApplicationController
   end
 
   def update
-    @dental_office = DentalOffice.update(dental_office_params)
-    if @dental_office.save
+    @dental_office = DentalOffice.find(params[:id])
+    if @dental_office.update(dental_office_params)
       flash[:notice] = "Successfully edited Dental Office"
       redirect_to "/dental_offices/#{@dental_office.id}"
     else

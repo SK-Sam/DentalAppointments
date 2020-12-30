@@ -1,2 +1,6 @@
 <h1>Edit Information For <%= @dental_office.name %></h1>
+<%= render partial: 'error_flash' %>
 
+<%= render partial: 'dental_office_form', locals: {
+  path: "/dental_offices/#{@dental_office.id}", method: :patch, button_text: 'Edit Dental Office'
+} %>
