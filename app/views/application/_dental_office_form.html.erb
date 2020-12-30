@@ -1,15 +1,15 @@
 <%= form_tag path, method: method do %>
   <%= label_tag :name %>
-  <%= text_field_tag :name %></br></br>
+  <%= text_field_tag :name, model.name if (model.errors[:name].any? || model.name != nil) %></br></br>
   <%= label_tag :street_address %>
-  <%= text_field_tag :street_address %></br></br>
+  <%= text_field_tag :street_address, model.street_address if (model.errors[:street_address].any? || model.street_address != nil) %></br></br>
   <%= label_tag :city %>
-  <%= text_field_tag :city %></br></br>
+  <%= text_field_tag :city, model.city if (model.errors[:city].any? || model.city != nil) %></br></br>
   <%= label_tag :state %>
-  <%= text_field_tag :state %></br></br>
+  <%= text_field_tag :state, model.state if (model.errors[:state].any? || model.state != nil) %></br></br>
   <%= label_tag :zip_code %>
-  <%= text_field_tag :zip_code %></br></br>
+  <%= text_field_tag :zip_code, model.zip_code if (model.errors[:zip_code].any? || model.zip_code != nil) %></br></br>
   <%= label_tag :insurance_type %>
-  <%= text_field_tag :insurance_type %></br></br>
+  <%= text_field_tag :insurance_type, model.insurance_type if (model.errors[:insurance_type].any? || model.insurance_type != nil) %></br></br>
   <%= submit_tag button_text%>
 <% end %>
