@@ -1,5 +1,5 @@
 <h1><%= @dental_office.name %></h1>
-<%= button_to "Edit Office Info" %>
+<%= button_to "Edit Office Info", "/dental_offices/#{@dental_office.id}/edit", method: :get %>
 
 <section id="office_info">
 <h3>Insurance Type Accepted: <%= @dental_office.insurance_type %></h3>

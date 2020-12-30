@@ -21,6 +21,21 @@ class DentalOfficesController < ApplicationController
     end
   end
 
+  def edit
+    @dental_office = DentalOffice.find(params[:id])
+  end
+
+  def update
+    @dental_office = DentalOffice.update(dental_office_params)
+    if @dental_office.save
+      flash[:notice] = "Successfully edited Dental Office"
+      redirect_to "/dental_offices/#{@dental_office.id}"
+    else
+      flash[:error] = @dental_office.errors.full_messages
+      render :edit
+    end
+  end
+
   private 
   def dental_office_params
     params.permit(:name, :street_address, :city, :state, :zip_code, :insurance_type)
