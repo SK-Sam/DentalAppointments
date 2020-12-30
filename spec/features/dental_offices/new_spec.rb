@@ -46,5 +46,14 @@ RSpec.describe 'New Page' do
         expect(page).to have_content("Insurance type can't be blank")
       end
     end
+    it 'can invalidate numbers in name' do
+      fill_in 'name', with: '1'
+
+      click_on 'Add Dental Office to List'
+
+      within("section.flash") do
+        expect(page).to have_content("Name cannot have numbers")
+      end
+    end
   end
 end
