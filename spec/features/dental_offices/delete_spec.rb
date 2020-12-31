@@ -7,7 +7,7 @@ RSpec.describe 'Delete Funtionality' do
   end
   it 'can see a Delete button and remove office from list' do
     delete_text = "Delete Office From List"
-    expect(page).to have_content(delete_text)
+    expect(page).to have_button(delete_text)
 
     click_on delete_text
 
