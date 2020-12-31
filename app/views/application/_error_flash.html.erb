@@ -1,0 +1,7 @@
+<section class="flash">
+<% flash.each do |type, msgs| %>
+  <% msgs.each do |msg| %>
+    <ul><%= msg %></ul>
+  <% end %>
+<% end %>
+</section>
