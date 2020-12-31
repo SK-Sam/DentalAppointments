@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get "/dental_offices/:id", to: "dental_offices#show"
   get "/dental_offices/:id/edit", to: "dental_offices#edit"
   patch "/dental_offices/:id", to: "dental_offices#update"
-  post "/dental_offices", to: "dental_offices#create"  
+  post "/dental_offices", to: "dental_offices#create"
+  delete "/dental_offices/:id", to: "dental_offices#destroy"
 
 
   # Dentists

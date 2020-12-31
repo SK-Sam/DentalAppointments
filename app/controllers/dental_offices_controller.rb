@@ -37,6 +37,11 @@ class DentalOfficesController < ApplicationController
     end
   end
 
+  def destroy
+    DentalOffice.destroy(params[:id])
+    redirect_to "/dental_offices"
+  end
+
   private 
   def dental_office_params
     params.permit(:name, :street_address, :city, :state, :zip_code, :insurance_type)
