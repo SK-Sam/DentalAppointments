@@ -13,7 +13,6 @@ RSpec.describe 'Edit Page' do
       state = Faker::Address.state_abbr
       zip_code = Faker::Number.leading_zero_number(digits: 5)
       insurance_type = "HMO"
-      save_and_open_page
 
       fill_in 'name', with: name
       fill_in 'street_address', with: street_address
@@ -44,6 +43,7 @@ RSpec.describe 'Edit Page' do
         expect(page).to have_content("Zip code can't be blank")
         expect(page).to have_content("Insurance type can't be blank")
       end
+      expect(page).to have_content(@office1.name)
     end
     it 'can invalidate numbers in name' do
       fill_in 'name', with: '1'

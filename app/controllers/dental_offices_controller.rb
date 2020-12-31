@@ -32,6 +32,7 @@ class DentalOfficesController < ApplicationController
       redirect_to "/dental_offices/#{@dental_office.id}"
     else
       flash[:error] = @dental_office.errors.full_messages
+      @dental_office = DentalOffice.find(params[:id])
       render :edit
     end
   end
